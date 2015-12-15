@@ -50,13 +50,13 @@ In order to determine a Frill’s condition tier, consider the following:
 
 Current defined condition tiers are as follows.
 
-**Tier 0** - No defects - this frill is perfect
-**Tier 1** - May possess no more than two minor defects
-**Tier 2** - May possess no more than four minor defects and two major defects
-**Tier 3** - May possess no more than eight minor defects and three major defects
-**Tier 4** - May possess no more than four major defects and one massive defect
-**Tier 5** - May possess no more than two massive defects
-**Tier 6** - May possess no more than three massive defects
-**Tier 7** - May possess no more than four massive defects
-**Tier 8** - Frill is incomplete
-**Tier 9** - Defect listing falls outside of all defined tier definitions
+* **Tier 0** - No defects - this frill is perfect
+* **Tier 1** - May possess no more than two minor defects
+* **Tier 2** - May possess no more than four minor defects and two major defects
+* **Tier 3** - May possess no more than eight minor defects and three major defects
+* **Tier 4** - May possess no more than four major defects and one massive defect
+* **Tier 5** - May possess no more than two massive defects
+* **Tier 6** - May possess no more than three massive defects
+* **Tier 7** - May possess no more than four massive defects
+* **Tier 8** - Frill is incomplete
+* **Tier 9** - Defect listing falls outside of all defined tier definitions
