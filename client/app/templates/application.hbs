@@ -1,0 +1,22 @@
+<div class="top-bar" id="main-menu">
+  <div class="top-bar-right">
+    <ul>
+      <li class="menu-text">
+      {{#if session.isAuthenticated}}
+        <a {{action 'invalidateSession'}} href class="page-link">Log Out</a>
+      {{else}}
+        {{link-to 'Log In' 'login' class="page-link"}}
+      {{/if}}
+      </li>  
+    </ul>
+  </div>
+</div>
+
+<div class="page-content">
+  <div class="wrapper">
+    {{outlet}}
+  </div>
+</div>
+
+<footer class="site-footer">
+</footer>

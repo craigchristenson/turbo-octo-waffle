@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="medium-6 medium-centered large-4 large-centered columns">
+    <form {{action "signup" on="submit"}}>
+      <div class="row column log-in-form">
+      {{#if errorMessage}}
+        <div class="form-group">
+          <div class="alert">{{errorMessage}}</div>
+        </div>
+      {{/if}}
+        <h4 class="text-center">Signup with your email account</h4>
+        <label>Email
+          {{input type="email" value=email placeholder="name@domain.com" id="email"}}
+        </label>
+        <label>Password
+          {{input type="password" value=password id="password"}}
+        </label>
+        <p><input type="submit" class="button expanded" value="Signup"></p>
+      </div>
+    </form>
+  </div>
+</div>

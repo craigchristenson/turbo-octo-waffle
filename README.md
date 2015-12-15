@@ -1,0 +1,3 @@
+Just an excersise that gave me an excuse to finially try to learn ember. I gotta long way to go...
+
+Please read more about the problem in the [backstory](backstory.md).

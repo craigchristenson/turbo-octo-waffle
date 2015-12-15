@@ -1,0 +1,90 @@
+<div class="admin">
+  <form role="form" {{action "addDefect" on="submit"}}>
+  <div class="row">
+      <div class="panel clearfix">
+        <a class="button right" {{action 'getTier'}}>Submit</a>
+        <h3>Frill Result</h3>
+        <p>Generation:  {{result.generation}}</p>
+        <p>Tier:  {{result.tier}}</p>
+      </div>
+      <div class="row">
+        <h3>Please select the Frill's defects, then click submit to determine the Tier.</h3>
+        <hr>
+      </div>
+      <div class="medium-3 columns">
+        <h3>Front Casing</h3>
+        <p>
+        {{#each frill.front.defects as |front|}}
+          {{#list-item content=front}}
+        {{#x-select value=front.type action="selectItem"}}
+          {{#each choices as |selectChoice|}}
+            {{#x-option value=selectChoice}}{{selectChoice}}{{/x-option}}
+          {{/each}}
+        {{/x-select}}
+          <button {{action 'addFrontCasingDefect' front}}>+</button>
+          <button {{action 'removeFrontCasingDefect' front}}>-</button>
+          <hr>
+          {{/list-item}}
+        {{/each}}
+        </p>
+      </div>
+      <div class="medium-3 columns">
+        <h3>Rear Casing</h3>
+        <p>
+        {{#each frill.rear.defects as |rear|}}
+          {{#list-item content=rear}}
+        {{#x-select value=rear.type action="selectItem"}}
+          {{#each choices as |selectChoice|}}
+            {{#x-option value=selectChoice}}{{selectChoice}}{{/x-option}}
+          {{/each}}
+        {{/x-select}}
+          <button {{action 'addRearCasingDefect' rear}}>+</button>
+          <button {{action 'removeRearCasingDefect' rear}}>-</button>
+          <hr>
+          {{/list-item}}
+        {{/each}}
+        </p>
+      </div>
+      <div class="medium-3 columns">
+        <h3>Hinge</h3>
+        <p>
+        {{#each frill.hinge.defects as |hinge|}}
+          {{#list-item content=hinge}}
+        {{#x-select value=hinge.type action="selectItem"}}
+          {{#each choices as |selectChoice|}}
+            {{#x-option value=selectChoice}}{{selectChoice}}{{/x-option}}
+          {{/each}}
+        {{/x-select}}
+          <button {{action 'addHingeDefect' hinge}}>+</button>
+          <button {{action 'removeHingeDefect' hinge}}>-</button>
+          <hr>
+          {{/list-item}}
+        {{/each}}
+        </p>
+      </div>
+      <div class="medium-3 columns">
+        <h3>Widgets</h3>
+        <p>
+        {{#each frill.widgets as |widget|}}
+          <p>Widget</p>
+          <button {{action 'addWidget' widget}}>+</button>
+          <button {{action 'removeWidget' widget}}>-</button>
+          {{#each widget.defects as |item|}}
+            {{#list-item content=item}}
+              {{#x-select value=item.type action="selectItem"}}
+                {{#each choices as |selectChoice|}}
+                  {{#x-option value=selectChoice}}{{selectChoice}}{{/x-option}}
+                {{/each}}
+              {{/x-select}}
+            <button {{action 'addWidgetDefect' widget item }}>+</button>
+            <button {{action 'removeWidgetDefect' widget item}}>-</button>
+            <hr>
+            {{/list-item}}
+          {{/each}}
+        {{/each}}
+        </p>
+      </div>     
+    </div>
+  </form>
+  {{outlet}}
+</div>
