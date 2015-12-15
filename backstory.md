@@ -43,6 +43,9 @@ In order to determine a Frill’s condition tier, consider the following:
 
 #### Broken Hinge
 * **Incomplete** - hinge is broken
+ 
+_Note: A given component may only suffer from a single instance of each type of defect - for example, a bent hinge may only suffer from one 'bent' defect, but it is entirely possible for it to be both bent and broken._
+
 
 
 ### Condition Tiers
