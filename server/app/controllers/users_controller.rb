@@ -14,6 +14,13 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    @user = User.find_by authentication_token: params[:user][:token]
+    @user.authentication_token = nil
+    @user.save!
+    render json: { user_id: @user.id }, status: 200
+  end
+
   private
 
   def user_params

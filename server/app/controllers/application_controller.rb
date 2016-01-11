@@ -6,24 +6,18 @@ class ApplicationController < ActionController::Base
 
   protected
 
-  def authenticate_user_from_token!
-    authenticated = authenticate_with_http_token do |user_token, options|
-      user_email = options[:user_email].presence
-      user = user_email && User.find_by_email(user_email)
+  def handle_error(error)
+    render :json => {:error => error}
+  end
 
-      if user && Devise.secure_compare(user.authentication_token, user_token)
-        sign_in user, store: false
+  def http_basic_authenticate!
+    authenticate_or_request_with_http_basic do |user, pass|
+      authenticated_user = User.find_by_email(user)
+      if authenticated_user && Devise.secure_compare(authenticated_user.authentication_token, pass)
+        sign_in authenticated_user, store: false
       else
         render json: 'Invalid authorization.'
       end
     end
-
-    if !authenticated
-      render json: 'No authorization provided.'
-    end
-  end
-
-  def handle_error(error)
-    render :json => {:error => error}
   end
 end

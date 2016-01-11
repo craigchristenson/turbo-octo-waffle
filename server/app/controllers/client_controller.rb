@@ -1,5 +1,5 @@
 class ClientController < ApplicationController
-  # before_filter :authenticate_user_from_token!
+  before_filter :http_basic_authenticate!
 
   respond_to :json
 

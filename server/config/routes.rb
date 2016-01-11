@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   root 'welcome#index'
-  resources :users, only: [ :create ]
+  resources :users, only: [ :create, :destroy ]
   resources :clients, only: [ :tier ]
   devise_for :users, controllers: { sessions: 'sessions' }
 
